@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เราคบกันมา</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>เราคบกันมาแล้ว</h2>
+    <h1 id="days"></h1>
+    <p>ตั้งแต่ 23/11/2023</p>
+    <a href="menu.html" class="btn small">กลับเมนู</a>
+</div>
+
+<script>
+const start = new Date(2023,10,23);
+const now = new Date();
+const diff = Math.floor((now - start)/(1000*60*60*24));
+document.getElementById("days").innerText = diff + " วัน 💖";
+</script>
+</body>
+</html>

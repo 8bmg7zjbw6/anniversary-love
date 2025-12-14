@@ -1,0 +1,78 @@
+/* โหลดฟอนต์ Mali */
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500;600&display=swap');
+
+/* บังคับฟอนต์ทั้งเว็บ */
+* {
+    font-family: 'Mali', cursive !important;
+}
+
+body{
+    margin:0;
+    background:#fff0f6;
+    text-align:center;
+}
+
+.container{
+    max-width:420px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.main-img{
+    width:220px;
+}
+
+/* ปุ่มทั้งหมด */
+.btn,
+button,
+input,
+textarea,
+select{
+    display:inline-block;
+    margin:10px;
+    padding:12px 25px;
+    background:#ff7eb9;
+    color:white;
+    border:none;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* ปุ่มเล็ก */
+.btn.small{
+    font-size:14px;
+    padding:8px 16px;
+}
+
+.input-code{
+    font-size:20px;
+    padding:10px;
+    width:160px;
+    text-align:center;
+}
+
+.gallery{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:10px;
+}
+
+.grid img{
+    width:48%;
+    margin:1%;
+    border-radius:15px;
+}
+
+.letter{
+    text-align:left;
+    line-height:1.7;
+}
+
+.hint{
+    color:#ff6fa1;
+}

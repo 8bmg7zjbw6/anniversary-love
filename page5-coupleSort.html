@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เรียงภาพรูปคู่</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    background: linear-gradient(#ffe6ee, #fff);
+    text-align: center;
+    font-family: 'Mali', cursive;
+  }
+
+  h2 {
+    margin-top: 20px;
+    color: #e46a8c;
+  }
+
+  .puzzle {
+    width: 300px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .piece {
+    width: 147px;
+    height: 147px;
+    border-radius: 12px;
+    background-image: url("assets/couple.jpg");
+    background-size: 300px 300px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .success {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #d14d72;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 20px;
+    background: #f07fa5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<h2>เรียงภาพรูปคู่ให้ถูกนะ 💕</h2>
+<p>แตะภาพเพื่อสลับตำแหน่ง</p>
+
+<div class="puzzle" id="puzzle"></div>
+
+<div class="success" id="success">
+  เรียงสำเร็จแล้ว 💖 น่ารักที่สุดเลย
+</div>
+
+<button onclick="location.href='menu.html'">กลับเมนู</button>
+
+<script>
+  const positions = [
+    "0px 0px",
+    "-150px 0px",
+    "0px -150px",
+    "-150px -150px"
+  ];
+
+  let order = [0,1,2,3];
+  order.sort(() => Math.random() - 0.5);
+
+  const puzzle = document.getElementById("puzzle");
+  let selected = null;
+
+  function render() {
+    puzzle.innerHTML = "";
+    order.forEach((pos, i) => {
+      const div = document.createElement("div");
+      div.className = "piece";
+      div.style.backgroundPosition = positions[pos];
+      div.onclick = () => select(i);
+      puzzle.appendChild(div);
+    });
+  }
+
+  function select(i) {
+    if (selected === null) {
+      selected = i;
+    } else {
+      [order[selected], order[i]] = [order[i], order[selected]];
+      selected = null;
+      render();
+      check();
+    }
+  }
+
+  function check() {
+    if (order.join() === "0,1,2,3") {
+      document.getElementById("success").style.display = "block";
+    }
+  }
+
+  render();
+</script>
+
+</body>
+</html>
