@@ -2,49 +2,50 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>เราคบกันมากี่วัน 💙</title>
+<title>เราคบกันมากี่วัน</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="no-center">
+<body>
 <div class="container">
 
-    <h2>เราคบกันมาแล้ว <span class="heart">💙</span></h2>
+    <h2>เราคบกันมาแล้ว 💙</h2>
     <p class="hint">ตั้งแต่ 23 พฤศจิกายน 2566</p>
 
     <div class="time-grid">
-
         <div class="time-card">
+            <div class="icon">📅</div>
             <div class="num" id="months">0</div>
             <div class="label">เดือน</div>
         </div>
 
         <div class="time-card">
+            <div class="icon">🗓️</div>
             <div class="num" id="days">0</div>
             <div class="label">วัน</div>
         </div>
 
         <div class="time-card">
+            <div class="icon">⏰</div>
             <div class="num" id="hours">0</div>
             <div class="label">ชั่วโมง</div>
         </div>
 
         <div class="time-card">
+            <div class="icon">⏱️</div>
             <div class="num" id="minutes">0</div>
             <div class="label">นาที</div>
         </div>
 
-        <div class="time-card" style="grid-column:span 2;">
+        <div class="time-card full">
+            <div class="icon">💙</div>
             <div class="num" id="seconds">0</div>
-            <div class="label">วินาที ⏱️</div>
+            <div class="label">วินาที</div>
         </div>
-
     </div>
 
     <a href="menu.html" class="btn small">กลับเมนู</a>
-
 </div>
 
 <script>
@@ -61,10 +62,10 @@ function updateTime(){
     diff = Math.floor(diff / 60);
 
     const hours = diff % 24;
-    const totalDays = Math.floor(diff / 24);
+    diff = Math.floor(diff / 24);
 
-    const months = Math.floor(totalDays / 30);
-    const days = totalDays % 30;
+    const days = diff % 30;
+    const months = Math.floor(diff / 30);
 
     document.getElementById("months").innerText = months;
     document.getElementById("days").innerText = days;
@@ -73,8 +74,8 @@ function updateTime(){
     document.getElementById("seconds").innerText = seconds;
 }
 
-updateTime();
 setInterval(updateTime, 1000);
+updateTime();
 </script>
 
 </body>
