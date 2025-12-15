@@ -8,21 +8,21 @@
 
 <style>
 .puzzle{
-    width:280px;
+    width:260px;
     margin:20px auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:6px;
+    gap:8px;
 }
 
 .piece{
     width:100%;
     aspect-ratio:1/1;
-    border-radius:14px;
+    border-radius:16px;
     background-image:url("assets/couple.jpg");
-    background-size:280px 280px;
+    background-size:260px 260px;
     cursor:pointer;
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
+    box-shadow:0 6px 14px rgba(0,0,0,.15);
 }
 
 .success{
@@ -34,7 +34,7 @@
 </style>
 </head>
 
-<body class="no-center">
+<body>
 
 <div class="container">
     <h2>เรียงภาพรูปคู่ <span class="heart">💙</span></h2>
@@ -51,9 +51,10 @@
 
 <script>
 const positions=[
- "0px 0px","-140px 0px",
- "0px -140px","-140px -140px"
+ "0px 0px","-130px 0px",
+ "0px -130px","-130px -130px"
 ];
+
 let order=[0,1,2,3].sort(()=>Math.random()-0.5);
 const puzzle=document.getElementById("puzzle");
 let selected=null;
@@ -70,13 +71,15 @@ function render(){
 }
 
 function select(i){
- if(selected===null){selected=i;}
- else{
+ if(selected===null){
+   selected=i;
+ }else{
   [order[selected],order[i]]=[order[i],order[selected]];
   selected=null;
   render();
-  if(order.join()=="0,1,2,3")
-   document.getElementById("success").style.display="block";
+  if(order.join()=="0,1,2,3"){
+    document.getElementById("success").style.display="block";
+  }
  }
 }
 render();
