@@ -4,23 +4,27 @@
 <meta charset="UTF-8">
 <title>ของรางวัล</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <div class="container">
-<h2>ของรางวัล 🎁</h2>
-<button class="btn" onclick="spin()">สุ่มเลย</button>
-<p id="reward"></p>
-<a href="menu.html" class="btn small">กลับเมนู</a>
+    <h2>ของรางวัล <span class="heart">💙</span></h2>
+
+    <button class="btn" onclick="spin()">สุ่มเลย</button>
+    <p id="reward" style="font-size:18px;margin:15px 0;"></p>
+
+    <a href="menu.html" class="btn small">กลับเมนู</a>
 </div>
 
 <script>
-const rewards=["กอด 1 ที","หอมแก้ม","บอกรัก","เลือกของกิน"];
+const rewards=["กอด 1 ที 🤍","หอมแก้ม 💙","บอกรัก","เลือกของกิน"];
 function spin(){
-document.getElementById("reward").innerText =
-rewards[Math.floor(Math.random()*rewards.length)];
+ document.getElementById("reward").innerText=
+ rewards[Math.floor(Math.random()*rewards.length)];
 }
 </script>
+
 </body>
 </html>
