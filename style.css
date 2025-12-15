@@ -4,6 +4,7 @@
 /* บังคับฟอนต์ทั้งเว็บ */
 * {
     font-family: 'Mali', cursive !important;
+    box-sizing: border-box;
 }
 
 body{
@@ -12,28 +13,35 @@ body{
     text-align:center;
 }
 
+/* ===== กล่องหลัก ===== */
 .container{
-    max-width:420px;
-    margin:30px auto;
+    max-width:360px;        /* จาก 420 → พอดีมือถือ */
+    width:90%;
+    margin:25px auto;
     background:white;
-    padding:25px;
+    padding:22px;
     border-radius:25px;
     box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 
+/* ===== รูปหลัก ===== */
 .main-img{
-    width:220px;
+    width:70%;
+    max-width:220px;
+    height:auto;
+    margin:15px auto;
+    display:block;
 }
 
-/* ปุ่มทั้งหมด */
+/* ===== ปุ่มทั้งหมด ===== */
 .btn,
 button,
 input,
 textarea,
 select{
     display:inline-block;
-    margin:10px;
-    padding:12px 25px;
+    margin:10px 5px;
+    padding:12px 26px;
     background:#ff7eb9;
     color:white;
     border:none;
@@ -46,33 +54,63 @@ select{
 /* ปุ่มเล็ก */
 .btn.small{
     font-size:14px;
-    padding:8px 16px;
+    padding:8px 18px;
 }
 
+/* ช่องกรอกรหัส */
 .input-code{
-    font-size:20px;
+    font-size:18px;       /* ลดนิดนึง */
     padding:10px;
     width:160px;
     text-align:center;
+    border-radius:12px;
+    border:1px solid #ffc1d9;
 }
 
+/* ===== รูป ===== */
 .gallery{
     width:100%;
     border-radius:15px;
-    margin-bottom:10px;
+    margin-bottom:12px;
+}
+
+/* ===== รูปคู่ / แกลเลอรี ===== */
+.grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
 }
 
 .grid img{
     width:48%;
-    margin:1%;
     border-radius:15px;
 }
 
+/* ===== จดหมาย ===== */
 .letter{
     text-align:left;
     line-height:1.7;
+    font-size:16px;
 }
 
+/* ===== ข้อความใบ้ ===== */
 .hint{
     color:#ff6fa1;
+}
+
+/* ===== หัวใจสีฟ้า 💙 ===== */
+.heart{
+    color:#4da6ff;
+}
+
+/* ===== รองรับจอเล็กมาก ===== */
+@media (max-width:400px){
+    .container{
+        padding:18px;
+    }
+    .btn{
+        font-size:15px;
+        padding:10px 22px;
+    }
 }
