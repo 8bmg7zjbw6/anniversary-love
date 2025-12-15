@@ -7,17 +7,22 @@
     box-sizing: border-box;
 }
 
+/* ===== จัดหน้าให้อยู่กึ่งกลาง ===== */
 body{
     margin:0;
+    min-height:100vh;
     background:#fff0f6;
+    display:flex;
+    justify-content:center;   /* กลางแนวนอน */
+    align-items:center;       /* กลางแนวตั้ง */
     text-align:center;
+    padding:20px 10px;        /* กันชิดจอมือถือ */
 }
 
 /* ===== กล่องหลัก ===== */
 .container{
-    max-width:360px;        /* จาก 420 → พอดีมือถือ */
-    width:90%;
-    margin:25px auto;
+    width:100%;
+    max-width:360px;
     background:white;
     padding:22px;
     border-radius:25px;
@@ -59,7 +64,7 @@ select{
 
 /* ช่องกรอกรหัส */
 .input-code{
-    font-size:18px;       /* ลดนิดนึง */
+    font-size:18px;
     padding:10px;
     width:160px;
     text-align:center;
