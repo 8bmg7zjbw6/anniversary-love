@@ -7,16 +7,21 @@
     box-sizing: border-box;
 }
 
-/* ===== จัดหน้าให้อยู่กึ่งกลาง ===== */
+/* ===== ค่าเริ่มต้น : จัดกลางจอ ===== */
 body{
     margin:0;
     min-height:100vh;
     background:#fff0f6;
     display:flex;
-    justify-content:center;   /* กลางแนวนอน */
-    align-items:center;       /* กลางแนวตั้ง */
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:20px 10px;        /* กันชิดจอมือถือ */
+    padding:20px 10px;
+}
+
+/* ===== ใช้กับหน้าที่ยาว (ไม่จัดกลางแนวตั้ง) ===== */
+body.no-center{
+    align-items:flex-start;   /* << แก้ตรงนี้ */
 }
 
 /* ===== กล่องหลัก ===== */
