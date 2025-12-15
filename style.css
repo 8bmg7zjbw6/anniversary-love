@@ -26,8 +26,7 @@ body{
 }
 
 /* =========================
-   BODY : หน้ายาว (ไม่จัดกลางแนวตั้ง)
-   ใช้กับ gallery / รูปคู่ / เมนู
+   BODY : หน้ายาว
    ========================= */
 body.no-center{
     align-items:flex-start;
@@ -183,11 +182,38 @@ select{
     margin:0;
 }
 
+/* ==================================================
+   หน้าเราคบกันมากี่วัน (page1-loveDuration.html)
+   ================================================== */
+.time-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin:20px 0;
+}
+
+.time-card{
+    background:#fef1f7;
+    border-radius:18px;
+    padding:18px 10px;
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
+}
+
+.time-card .num{
+    font-size:28px;
+    font-weight:600;
+    color:#4da6ff;
+}
+
+.time-card .label{
+    font-size:14px;
+    margin-top:4px;
+    color:#777;
+}
+
 /* =========================
    RESPONSIVE
    ========================= */
-
-/* มือถือจอเล็ก */
 @media (max-width:400px){
     .container{
         padding:18px;
@@ -198,7 +224,6 @@ select{
     }
 }
 
-/* เมนูการ์ด: จอเล็กมาก → 1 ช่อง */
 @media (max-width:360px){
     .menu-grid{
         grid-template-columns:1fr;
