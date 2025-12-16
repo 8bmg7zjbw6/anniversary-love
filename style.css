@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500;600&display=swap');
 
 /* =========================
-   ตั้งค่าพื้นฐาน
+   ตั้งค่าพื้นฐานทั้งเว็บ
    ========================= */
 *{
     font-family:'Mali', cursive !important;
@@ -12,7 +12,7 @@
 }
 
 /* =========================
-   BODY
+   BODY : ค่าเริ่มต้น
    ========================= */
 body{
     margin:0;
@@ -25,6 +25,7 @@ body{
     padding:20px 10px;
 }
 
+/* หน้ายาว (gallery / menu) */
 body.no-center{
     align-items:flex-start;
 }
@@ -37,40 +38,113 @@ body.no-center{
     max-width:360px;
     background:white;
     padding:22px;
-    border-radius:26px;
-    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    border-radius:28px;
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
 }
 
 /* =========================
-   ปุ่มทั่วไป
+   รูปหลัก
    ========================= */
-.btn, button{
+.main-img{
+    width:70%;
+    max-width:220px;
+    margin:15px auto;
+    display:block;
+}
+
+/* =========================
+   ปุ่ม
+   ========================= */
+.btn,
+button,
+input,
+textarea,
+select{
+    display:inline-block;
     margin:10px 5px;
     padding:12px 26px;
     background:#ff7eb9;
     color:white;
     border:none;
     border-radius:30px;
+    text-decoration:none;
     font-size:16px;
     cursor:pointer;
-    text-decoration:none;
+    transition:.25s;
 }
 
+.btn:hover,
+button:hover{
+    transform:translateY(-2px);
+    background:#ff5fa6;
+}
+
+/* ปุ่มเล็ก */
 .btn.small{
     font-size:14px;
     padding:8px 18px;
 }
 
 /* =========================
-   หัวใจ 💙
+   ช่องกรอกรหัส
    ========================= */
+.input-code{
+    font-size:18px;
+    padding:10px;
+    width:160px;
+    text-align:center;
+    border-radius:12px;
+    border:1px solid #ffc1d9;
+}
+
+/* =========================
+   Gallery / รูป
+   ========================= */
+.gallery{
+    width:100%;
+    border-radius:16px;
+    margin-bottom:12px;
+}
+
+/* =========================
+   GRID รูป
+   ========================= */
+.grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+}
+
+.grid img{
+    width:48%;
+    border-radius:16px;
+}
+
+/* =========================
+   จดหมาย
+   ========================= */
+.letter{
+    text-align:left;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* =========================
+   ข้อความเสริม
+   ========================= */
+.hint{
+    color:#ff6fa1;
+    font-size:14px;
+}
+
 .heart{
     color:#4da6ff;
 }
 
-/* =========================
-   MENU CARD
-   ========================= */
+/* ==================================================
+   เมนูแบบการ์ด (menu.html)
+   ================================================== */
 .menu-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -80,15 +154,15 @@ body.no-center{
 
 .menu-card{
     background:#ffe4f0;
-    border-radius:22px;
-    padding:22px 10px;
+    border-radius:24px;
+    padding:26px 10px;
     text-decoration:none;
     color:#333;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    box-shadow:0 10px 22px rgba(0,0,0,.1);
     transition:.25s;
 }
 
@@ -98,39 +172,67 @@ body.no-center{
 }
 
 .menu-card .icon{
-    font-size:36px;
+    font-size:38px;
     margin-bottom:10px;
 }
 
 .menu-card p{
     margin:0;
     font-size:15px;
+    line-height:1.4;
 }
 
-/* =========================
-   ปุ่มเพลง
-   ========================= */
-.music-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    background:#ff7eb9;
-    color:white;
-    font-size:22px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
-    cursor:pointer;
-    z-index:999;
+/* ==================================================
+   หน้าเราคบกันมากี่วัน (Love Duration)
+   ================================================== */
+.time-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin:20px 0;
+}
+
+.time-card{
+    background:#fff0f7;
+    border-radius:20px;
+    padding:18px 10px;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.time-card.full{
+    grid-column:1 / -1;
+    background:#e6f2ff;
+}
+
+.time-card .icon{
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.time-card .num{
+    font-size:26px;
+    font-weight:600;
+    color:#333;
+}
+
+.time-card .label{
+    font-size:14px;
+    color:#777;
 }
 
 /* =========================
    Responsive
    ========================= */
+@media(max-width:400px){
+    .container{
+        padding:18px;
+    }
+    .btn{
+        font-size:15px;
+        padding:10px 22px;
+    }
+}
+
 @media(max-width:360px){
     .menu-grid{
         grid-template-columns:1fr;
