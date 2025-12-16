@@ -219,6 +219,31 @@ button:hover{
     font-size:14px;
     color:#777;
 }
+/* =========================
+   ปุ่มเปิดเพลง
+   ========================= */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#ff7eb9;
+    color:white;
+    font-size:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    cursor:pointer;
+    z-index:999;
+    transition:0.25s;
+}
+
+.music-btn:active{
+    transform:scale(0.92);
+}
 
 /* =========================
    Responsive
@@ -238,3 +263,4 @@ button:hover{
         grid-template-columns:1fr;
     }
 }
+
