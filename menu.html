@@ -9,6 +9,28 @@
 </head>
 
 <body class="no-center">
+    <audio id="bgm" loop>
+    <source src="assets/coffee-date.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-btn" onclick="toggleMusic()">
+    🎵
+</div>
+
+<script>
+const music = document.getElementById("bgm");
+let isPlaying = false;
+
+function toggleMusic(){
+    if(!isPlaying){
+        music.play();
+        isPlaying = true;
+    }else{
+        music.pause();
+        isPlaying = false;
+    }
+}
+</script>
 
 <div class="container">
 
@@ -52,3 +74,4 @@
 
 </body>
 </html>
+
