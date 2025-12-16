@@ -4,26 +4,31 @@
 <meta charset="UTF-8">
 <title>เมนู</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="no-center">
 
-<div class="container">
+<!-- ===== เพลง ===== -->
+<audio id="bgm" loop>
+    <source src="assets/coffee-date.mp3" type="audio/mpeg">
+</audio>
 
-    <h2>เลือกดูได้เลย 💙</h2>
+<div class="music-btn" onclick="toggleMusic()">🎵</div>
+
+<div class="container">
+    <h2>เลือกดูได้เลย <span class="heart">💙</span></h2>
 
     <div class="menu-grid">
 
         <a href="page1-loveDuration.html" class="menu-card">
             <div class="icon">⏳</div>
-            <p>เราคบกันมากี่วัน</p>
+            <p>เราคบกันมานานแค่ไหน</p>
         </a>
 
         <a href="page2-letter.html" class="menu-card">
             <div class="icon">💌</div>
-            <p>จดหมาย</p>
+            <p>จดหมายถึงเธอ</p>
         </a>
 
         <a href="page3-quiz.html" class="menu-card">
@@ -33,7 +38,7 @@
 
         <a href="page4-gallery.html" class="menu-card">
             <div class="icon">📸</div>
-            <p>ความทรงจำ</p>
+            <p>ความทรงจำของเรา</p>
         </a>
 
         <a href="page5-coupleSort.html" class="menu-card">
@@ -47,8 +52,22 @@
         </a>
 
     </div>
-
 </div>
+
+<script>
+const music = document.getElementById("bgm");
+let playing = false;
+
+function toggleMusic(){
+    if(!playing){
+        music.play();
+        playing = true;
+    }else{
+        music.pause();
+        playing = false;
+    }
+}
+</script>
 
 </body>
 </html>
