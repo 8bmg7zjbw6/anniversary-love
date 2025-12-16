@@ -4,20 +4,15 @@
 <meta charset="UTF-8">
 <title>เมนู</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="no-center">
 
-<!-- ===== เพลง ===== -->
-<audio id="bgm" loop>
-    <source src="assets/coffee-date.mp3" type="audio/mpeg">
-</audio>
-
-<div class="music-btn" onclick="toggleMusic()">🎵</div>
-
 <div class="container">
-    <h2>เลือกดูได้เลย <span class="heart">💙</span></h2>
+
+    <h2>เลือกดูได้เลย 💙</h2>
 
     <div class="menu-grid">
 
@@ -52,22 +47,8 @@
         </a>
 
     </div>
+
 </div>
-
-<script>
-const music = document.getElementById("bgm");
-let playing = false;
-
-function toggleMusic(){
-    if(!playing){
-        music.play();
-        playing = true;
-    }else{
-        music.pause();
-        playing = false;
-    }
-}
-</script>
 
 </body>
 </html>
