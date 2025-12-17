@@ -58,7 +58,14 @@
 </div>
 
 <script>
-/* นับเวลา */
+/* อ้างอิง element ก่อน */
+const monthsEl = document.getElementById("months");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+/* วันที่เริ่มคบ */
 const startDate = new Date("2023-11-23T00:00:00");
 
 function updateTime(){
@@ -84,13 +91,7 @@ function updateTime(){
     secondsEl.innerText = seconds;
 }
 
-const monthsEl = document.getElementById("months");
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
-
-setInterval(updateTime,1000);
+setInterval(updateTime, 1000);
 updateTime();
 
 /* สร้างหัวใจลอย */
