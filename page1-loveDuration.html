@@ -2,13 +2,16 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>เราคบกันมากี่วัน</title>
+<title>เราคบกันมานานแค่ไหน</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="floating-hearts"></div>
+
+<!-- หัวใจลอย -->
+<div class="floating-hearts" id="hearts"></div>
+
 <div class="container">
 
     <h2>เราคบกันมาแล้ว 💙</h2>
@@ -45,15 +48,17 @@
             <div class="label">วินาที</div>
         </div>
     </div>
+
     <div class="love-text">
-        และทุกวินาทีที่ผ่านไป  
-        <br>ยังอยากเดินไปพร้อมกันแบบนี้ต่อไปนะ 💙
+        ทุกวินาทีที่ผ่านไป  
+        <br>หนูรักแด๊ดดี้มากขึ้นเสมอนะ 💙
     </div>
 
-    <a href="menu.html" class="btn small">กลับเมนู</a>
+    <a href="menu.html" class="btn">กลับเมนู</a>
 </div>
 
 <script>
+/* นับเวลา */
 const startDate = new Date("2023-11-23T00:00:00");
 
 function updateTime(){
@@ -72,18 +77,34 @@ function updateTime(){
     const days = diff % 30;
     const months = Math.floor(diff / 30);
 
-    document.getElementById("months").innerText = months;
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
+    monthsEl.innerText = months;
+    daysEl.innerText = days;
+    hoursEl.innerText = hours;
+    minutesEl.innerText = minutes;
+    secondsEl.innerText = seconds;
 }
 
-setInterval(updateTime, 1000);
+const monthsEl = document.getElementById("months");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+
+setInterval(updateTime,1000);
 updateTime();
+
+/* สร้างหัวใจลอย */
+const heartBox = document.getElementById("hearts");
+
+for(let i=0;i<20;i++){
+    const heart = document.createElement("span");
+    heart.innerText = "💙";
+    heart.style.left = Math.random()*100 + "%";
+    heart.style.animationDuration = (15 + Math.random()*10) + "s";
+    heart.style.fontSize = (14 + Math.random()*10) + "px";
+    heartBox.appendChild(heart);
+}
 </script>
 
 </body>
 </html>
-
-
