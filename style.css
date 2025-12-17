@@ -1,19 +1,13 @@
-/* =========================
-   โหลดฟอนต์ Mali
-   ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500;600&display=swap');
 
 /* =========================
-   ตั้งค่าพื้นฐาน
+   RESET
    ========================= */
 *{
     font-family:'Mali', cursive !important;
     box-sizing:border-box;
 }
 
-/* =========================
-   BODY
-   ========================= */
 body{
     margin:0;
     min-height:100vh;
@@ -30,7 +24,7 @@ body.no-center{
 }
 
 /* =========================
-   กล่องหลัก
+   CONTAINER
    ========================= */
 .container{
     width:100%;
@@ -44,7 +38,38 @@ body.no-center{
 }
 
 /* =========================
-   ปุ่มทั่วไป
+   TEXT
+   ========================= */
+h2{
+    margin:6px 0;
+}
+
+.hint{
+    color:#ff6fa1;
+    font-size:14px;
+}
+
+/* =========================
+   INPUT (หน้าใส่รหัส)
+   ========================= */
+input{
+    width:160px;
+    padding:12px;
+    font-size:18px;
+    text-align:center;
+    border-radius:14px;
+    border:2px solid #ffb3d1;
+    background:#fff5fa;
+    outline:none;
+}
+
+input:focus{
+    border-color:#ff7eb9;
+    background:#fff;
+}
+
+/* =========================
+   BUTTON
    ========================= */
 .btn, button{
     margin:10px 5px;
@@ -56,6 +81,12 @@ body.no-center{
     font-size:16px;
     cursor:pointer;
     text-decoration:none;
+    transition:.25s;
+}
+
+.btn:hover, button:hover{
+    background:#ff5fa6;
+    transform:translateY(-2px);
 }
 
 .btn.small{
@@ -64,14 +95,7 @@ body.no-center{
 }
 
 /* =========================
-   หัวใจ 💙
-   ========================= */
-.heart{
-    color:#4da6ff;
-}
-
-/* =========================
-   MENU CARD
+   MENU / GIFT / FLOWER / MEMORY CARD
    ========================= */
 .menu-grid{
     display:grid;
@@ -110,28 +134,31 @@ body.no-center{
 }
 
 /* =========================
-   ปุ่มเพลง
+   IMAGE / GALLERY
    ========================= */
-.music-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    background:#ff7eb9;
-    color:white;
-    font-size:22px;
+img{
+    max-width:100%;
+}
+
+.gallery{
+    width:100%;
+    border-radius:18px;
+    margin-bottom:12px;
+}
+
+.grid{
     display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
-    cursor:pointer;
-    z-index:999;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.grid img{
+    width:48%;
+    border-radius:16px;
 }
 
 /* =========================
-   หน้าเราคบกันมากี่วัน
+   LOVE DURATION
    ========================= */
 .time-grid{
     display:grid;
@@ -172,9 +199,6 @@ body.no-center{
     color:#666;
 }
 
-/* =========================
-   ข้อความหวานใต้การ์ด
-   ========================= */
 .love-text{
     margin:18px 0 10px;
     font-size:15px;
@@ -183,7 +207,7 @@ body.no-center{
 }
 
 /* =========================
-   หัวใจลอย (ไม่กระทบ layout)
+   FLOATING HEARTS
    ========================= */
 .floating-hearts{
     position:fixed;
@@ -201,16 +225,33 @@ body.no-center{
 }
 
 @keyframes floatUp{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(-120vh);
-    }
+    from{ transform:translateY(0); }
+    to{ transform:translateY(-120vh); }
 }
 
 /* =========================
-   Responsive
+   MUSIC BUTTON
+   ========================= */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#ff7eb9;
+    color:white;
+    font-size:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    cursor:pointer;
+    z-index:999;
+}
+
+/* =========================
+   RESPONSIVE
    ========================= */
 @media(max-width:360px){
     .menu-grid{
