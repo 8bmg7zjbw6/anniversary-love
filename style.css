@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500;600&display=swap');
 
+/* =========================
+   ตั้งค่าพื้นฐาน
+   ========================= */
 *{
     font-family:'Mali', cursive !important;
     box-sizing:border-box;
@@ -9,16 +12,26 @@ body{
     margin:0;
     min-height:100vh;
     background:#fff0f6;
+
+    /* จัดกึ่งกลางเฉพาะแนวนอน */
     display:flex;
     justify-content:center;
-    align-items:center;
+
     text-align:center;
     padding:20px 10px;
     position:relative;
     overflow-x:hidden;
 }
 
-/* กล่องหลัก */
+/* กันรูปใหญ่เกินจอ (iPhone/Android) */
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* =========================
+   กล่องหลัก
+   ========================= */
 .container{
     width:100%;
     max-width:360px;
@@ -28,9 +41,14 @@ body{
     box-shadow:0 12px 28px rgba(0,0,0,.12);
     position:relative;
     z-index:2;
+
+    /* จัดกลางแนวตั้งแบบปลอดภัย */
+    margin:40px auto;
 }
 
-/* หัวข้อ */
+/* =========================
+   หัวข้อ
+   ========================= */
 h2{
     margin-top:5px;
 }
@@ -108,7 +126,7 @@ h2{
 }
 
 /* =========================
-   หัวใจลอย
+   หัวใจลอย (ไม่กระทบ layout)
    ========================= */
 .floating-hearts{
     position:fixed;
@@ -133,5 +151,3 @@ h2{
         transform:translateY(-120vh);
     }
 }
-
-
